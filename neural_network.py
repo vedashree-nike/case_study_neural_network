@@ -7,8 +7,7 @@ import pandas as pd
 import os  # Import os for file path operations
 import matplotlib.pyplot as plt
 
-# --- Part 1: CSV Generation ---
-# This part creates the 'bin.csv' file that the neural network will use.
+# csv generation
 def generate_csv(filename='bin.csv', rows=10000, cols=9):
     """
     Generates a CSV file with random binary data.
@@ -21,7 +20,7 @@ def generate_csv(filename='bin.csv', rows=10000, cols=9):
     print(f"CSV file '{filename}' generated successfully.")
 
 
-# --- Part 2: Neural Network (Autoencoder for Anomaly Detection) ---
+# implementation of autoencoders
 class AE(nn.Module):
     def __init__(self):
         super().__init__()
@@ -133,11 +132,7 @@ def run_anomaly_detection(csv_filename='bin.csv', num_epochs=30, batch_size=64, 
 # --- Main execution block ---
 if __name__ == "__main__":
     csv_file = 'bin.csv'
-
-    # Step 1: Generate the CSV file
     generate_csv(csv_file)
-
-    # Step 2: Run the anomaly detection on the generated CSV
     run_anomaly_detection(csv_file)
 
 
