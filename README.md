@@ -14,6 +14,8 @@ Input Layer: This is where the network receives its input data. Each input neuro
 Hidden Layers: These layers perform most of the computational heavy lifting. A neural network can have one or multiple hidden layers. Each layer consists of units (neurons) that transform the inputs into something that the output layer can use.
 Output Layer: The final layer produces the output of the model. The format of these outputs varies depending on the specific task.
 
+![Image](https://github.com/user-attachments/assets/1f79c51d-42fd-41d1-9992-928f48f86489)
+
 ## Used Case
 With thousands of customers orders generated on a daily basis, tracking delays and recognising patterns become difficult. Being unable to detect common areas and patterns in delay causes three major issues -
 
@@ -26,6 +28,11 @@ With thousands of customers orders generated on a daily basis, tracking delays a
 With the following languages and concepts, the neural network was built.
 
 1. Python
+   1.Torch
+   2.Pandas
+   3.OS
+   4.Matplotlib
+   5.Numpy
 2. Machine Learning fundamentals
 3. Neural Networks
 4. Linear Algebra
@@ -63,3 +70,31 @@ As neural networks work on data with high dimensionality, we use encoders that b
 The encoder works one more time and compresses the input via three neurons, this is the second hidden layer.
 The decoder starts working now, to reconstruct or decompress the data. Giving us another hidden layer of 6 neurons.
 Finally, the output layer of 9 neurons is generated.
+
+## Results
+The neural network when trained over 30 epochs has the following outputs -
+
+1. The CSV file was generated successfully.
+2. The loss during the 1st epoch is 0.25 and this goes down to 0.15 during the 30th epoch.
+3. This signifies that the neural network is being trained successfully.
+4. Anomalies are detected successfully.
+5. Rows with anomalies can be reconstructed based on their deviation and thresholds.
+6. The neural network is able to identify which columns (0 indexed) the maximum anomaly/error is being detected.
+7. Based on these insights we can plot various graphs.
+   
+E.g - A graph of MSE against the number of rows can be plotted to identify how much significant deviation occurs in the dataset.
+
+![Image](https://github.com/user-attachments/assets/81a00bd0-0187-4b52-829a-2c1dc930cffd)
+
+## Code Setup
+1. Download ```neural_network.py```
+2. Download python
+3. Install the required packages
+4. Run ```python3 neural_network.py```
+
+## Sample Output
+
+--- Starting Anomaly Detection with bin.csv ---
+Successfully loaded data of shape: (10000, 9)
+Starting training on cpu...
+Epoch 1/30, Loss: 0.248623
