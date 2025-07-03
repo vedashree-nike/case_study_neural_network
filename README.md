@@ -94,7 +94,15 @@ E.g - A graph of MSE against the number of rows can be plotted to identify how m
 
 ## Sample Output
 
---- Starting Anomaly Detection with bin.csv ---
+ Starting Anomaly Detection with bin.csv
 Successfully loaded data of shape: (10000, 9)
 Starting training on cpu...
 Epoch 1/30, Loss: 0.248623
+
+Row 3684 (original data): [1. 1. 1. 1. 1. 1. 1. 0. 0.]
+Row 3684 (reconstructed data): [0.853907   0.5157838  0.5087579  0.41402456 0.47045046 0.56695044
+ 0.550596   0.640751   0.5932416 ]
+Row 3684 errors per column: [0.14609301 0.4842162  0.4912421  0.5859754  0.52954954 0.43304956
+ 0.449404   0.640751   0.5932416 ]
+Max error at column (0-indexed): 7
+
